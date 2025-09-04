@@ -654,7 +654,6 @@ footer p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
-
 }
 
 .service-item {
@@ -664,8 +663,6 @@ footer p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: all 0.3s;
-    max-width: 320px;
-    width: 100%;
 }
 
 .service-item:hover {
@@ -690,7 +687,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-
 /* =========================
    Skills Grid & Items
    ========================= */
@@ -700,7 +696,7 @@ footer p {
     gap: 15px;
     margin-top: 18px;
     justify-content: center;
-    justify-items: center;
+    
 }
 
 .skill-item {
@@ -783,11 +779,6 @@ footer p {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
-.services-grid {
-    justify-content: center !important;
-    justify-items: center !important;
-}
-
 
 @media (max-width: 1200px) {
     .skills-grid,
@@ -810,6 +801,7 @@ footer p {
     .services-grid,
     .work-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: block;
         gap: 14px;
     }
 }
@@ -824,7 +816,7 @@ footer p {
     width: 56px;
     height: 56px;
     font-size: 2.2rem;
-    display: flex;
+    display: block;
     margin: 0 auto 12px;
     border-radius: 16px;
     object-fit: cover;
@@ -832,8 +824,6 @@ footer p {
     box-shadow: 0 2px 8px rgba(139, 107, 76, 0.07);
     color: var(--primary-color);
     transition: background 0.2s, color 0.2s;
-    justify-content: center;
-    justify-items: center;
 }
 
 .skill-item:hover .skill-icon,
@@ -859,9 +849,11 @@ footer p {
     .skill-item img,
     .service-icon,
     .work-img i {
-        width: 40px;
-        height: 40px;
+        
         font-size: 1.2rem;
+        display: flex;
+        justify-content: center; /* يحط الأيقونة في النص أفقي */
+         align-items: center;
     }
 }
 
@@ -1151,7 +1143,8 @@ footer p {
 
 .skill-icon {
   font-size: 30px;
-  color: #ff9800; 
+  color: #ff9800; /* لون الأيقونات */
+  margin-bottom: 8px;
 }
 
 .skill-name {
@@ -1160,3 +1153,21 @@ footer p {
   display: block;
   font-weight: 500;
 }
+.work-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* في النص أفقي */
+    align-items: center;     /* في النص عمودي */
+}
+
+.work-img i {
+    font-size: 2.6rem; /* حجم الأيقونة */
+    color: var(--primary-color);
+    background: none; /* يشيل الخلفية الكبيرة */
+    box-shadow: none; 
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
